@@ -1,0 +1,52 @@
+<div class="add-payment">
+    <h1>Add New Payment</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="payee_first_name">First Name</label>
+        <input id="payee_first_name" [(ngModel)]="paymentData.payee_first_name" name="payee_first_name" required />
+      </div>
+      <div>
+        <label for="payee_last_name">Last Name</label>
+        <input id="payee_last_name" [(ngModel)]="paymentData.payee_last_name" name="payee_last_name" required />
+      </div>
+      <div>
+        <label for="payee_email">Email</label>
+        <input id="payee_email" [(ngModel)]="paymentData.payee_email" name="payee_email" type="email" required />
+      </div>
+      <div>
+        <label for="payee_phone_number">Phone Number</label>
+        <input id="payee_phone_number" [(ngModel)]="paymentData.payee_phone_number" name="payee_phone_number" required />
+      </div>
+      <div>
+        <label for="payee_address_line_1">Address Line 1</label>
+        <input id="payee_address_line_1" [(ngModel)]="paymentData.payee_address_line_1" name="payee_address_line_1" required />
+      </div>
+      <div>
+        <label for="payee_city">City</label>
+        <input id="payee_city" [(ngModel)]="paymentData.payee_city" name="payee_city" required />
+      </div>
+      <div>
+        <label for="payee_country">Country</label>
+        <input id="payee_country" [(ngModel)]="paymentData.payee_country" name="payee_country" required />
+      </div>
+      <div>
+        <label for="payee_postal_code">Postal Code</label>
+        <input id="payee_postal_code" [(ngModel)]="paymentData.payee_postal_code" name="payee_postal_code" required />
+      </div>
+      <div>
+        <label for="payee_due_date">Due Date</label>
+        <input id="payee_due_date" [(ngModel)]="paymentData.payee_due_date" name="payee_due_date" type="date" required />
+      </div>
+      <div>
+        <label for="due_amount">Due Amount</label>
+        <input id="due_amount" [(ngModel)]="paymentData.due_amount" name="due_amount" type="number" required />
+      </div>
+      <div>
+        <label for="currency">Currency</label>
+        <input id="currency" [(ngModel)]="paymentData.currency" name="currency" required />
+      </div>
+  
+      <button type="submit" [disabled]="isSubmitting">Create Payment</button>
+    </form>
+  </div>
+  

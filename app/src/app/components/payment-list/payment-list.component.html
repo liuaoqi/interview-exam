@@ -1,0 +1,33 @@
+<app-payment-list></app-payment-list>
+<div class="payment-list">
+    <h1>Payment List</h1>
+    <div>
+      <input [(ngModel)]="searchQuery" placeholder="Search Payments" />
+      <button (click)="onSearch()">Search</button>
+    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Payee Name</th>
+          <th>Status</th>
+          <th>Due Amount</th>
+          <th>Due Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments">
+          <td>{{ payment.first_name }} {{ payment.last_name }}</td>
+          <td>{{ payment.status }}</td>
+          <!-- <td>{{ payment.total_due | currency }}</td>
+          <td>{{ payment.due_date | date:'shortDate' }}</td> -->
+          <td>
+            <button (click)="deletePayment(payment._id)">Delete</button>
+            <button *ngIf="payment.evidence_file_id" (click)="downloadEvidence(payment._id)">Download Evidence</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
